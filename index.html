@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+
+		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id="boolean1">
+			ahhahahahah
+		</div>
+
+		<!-- 遮罩层 -->
+		<section class="mask" id="mask">
+			<!-- <div class="tankuang"> -->
+				<!-- <div class="top div1">
+					预填申请
+				</div>
+				<div class="center div1">
+					<div class="cLeft div2">
+						<input class="radio_type" type="radio" name="shenqing" id="chuchai" value="" /><label for="chuchai">出差申请</label>
+					</div>
+					<div class="cRight div2">
+						<input class="radio_type" type="radio" name="shenqing" id="yanhui" value="" /><label for="yanhui">宴会申请</label>
+					</div>
+				</div>
+				<div class="bottom div1">
+
+					<div class="bLeft div2">
+						取消
+					</div>
+					<div class="bRight div2">
+						确定
+					</div>
+				</div> -->
+				
+				<iframe class="tankuang" src="http://service.bj.10086.cn/m/recharge/showIndex.action?source=MA10086" width="100%" height="100%"></iframe>
+			<!-- </div> -->
+		</section>
+		<script type="text/javascript">
+			//显示遮罩层
+			function showMask() {
+				$("#mask").css("height", $(document).height());
+				$("#mask").css("width", $(document).width());
+				$("#mask").show();
+				$('body').css('position', 'fixed');
+			}
+			// showMask()
+			//隐藏遮罩层
+			function hideMask() {
+				$("#mask").hide();
+				$('body').css('position', 'unset');
+			}
+			hideMask()
+			
+			$("#boolean1").click(function(){
+				showMask()
+			})
+		</script>
+	</body>
+</html>

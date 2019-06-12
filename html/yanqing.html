@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+		<title>宴请申请</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../css/date.css" />
+
+		<script src="../js/index.js"></script>
+		<!-- 时间插件 -->
+		<script src="../js/jq/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../js/jq/date.js"></script>
+		<script type="text/javascript" src="../js/jq/iscroll_date.js"></script>
+	</head>
+	<body>
+
+
+		<ul class="form det-list">
+			<li>
+				<label>申请人</label><input type="text" disabled="disabled" value="管理员" />
+			</li>
+			<li>
+				<label>申请人所在</label><input type="text" disabled="disabled" value="综合管理部" />
+			</li>
+			<li>
+				<label>宴请时间</label>
+				<!-- 日期容器 -->
+				<div id="datePlugin"></div>
+				<input id="dateinput" type="text" value="时间插件" />
+				<script type="text/javascript">
+					$(function() {
+						//初始化日期插件	
+						$('#dateinput').date();
+					});
+				</script>
+			</li>
+			<li>
+				<label>宴请人</label><input type="text" value="" />
+			</li>
+			<li>
+				<label style="width: 2.1rem;">是否有外宾</label>
+				<input id="boolean1" type="radio" name="boolean" value="是" />
+				<label class="w120" for="boolean1">是</label>
+				<input id="boolean2" type="radio" name="boolean" value="否" />
+				<label class="w120" for="boolean2">否</label>
+			</li>
+			<li>
+				<label>宴请事由</label><input type="text" value="" />
+			</li>
+			<li>
+				<label>宴请地点</label><input type="text" value="" />
+				<!-- <div class="ui-select">
+					<select>
+						<option> </option>
+						<option>男</option>
+						<option>女</option>
+					</select>
+				</div> -->
+			</li>
+			<li>
+				<label>参加人员情况共计</label>
+				<input type="text" disabled="disabled" value="" />
+			</li>
+			<li>
+				<label>公司参加人数</label>
+				<input type="text" value="" />
+			</li>
+			<li>
+				<label>客户参加人数</label>
+				<input type="text" value="" />
+
+			</li>
+			<li>
+				<label>公司参加人员</label><input type="text" value="" />
+			</li>
+			<li>
+				<label>客户信息</label><input type="text" value="" />
+			</li>
+			<li>
+				<label>宴请费用或预算</label>
+				<input type="text" value="" />
+				￥
+			</li>
+			<li>
+				<label>部门领导审批意见</label><input type="text" disabled="disabled" value="" />
+			</li>
+			<li>
+				<label>公司领导意见</label><input type="text" disabled="disabled" value="" />
+			</li>
+
+		</ul>
+
+		<footer class="ftmwra">
+			<div class="ftmenus">
+				<a class="ftm01" id="agree" href="javascript:;"><i></i>
+					<p>同意</p>
+				</a>
+				<a class="ftm03" id="disagree" href="javascript:;"><i></i>
+					<p>驳回</p>
+				</a>
+			</div>
+		</footer>
+		<div class="fix-menus" id="scrollMenus">
+			<a class="top show" href="javascript:;"></a>
+			<a class="bottom show" href="javascript:;"></a>
+		</div>
+
+	</body>
+</html>

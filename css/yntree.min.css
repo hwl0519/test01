@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+/* 遮罩层 */
+section.mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, .5);
+	z-index: 100;
+}
+
+.yuTree {
+	background: #fff;
+	margin-top: 20%;
+	padding: .2rem 0;
+	padding-left: 20%;
+}
+
+.yuTree .yes {
+	width: 1.4rem;
+	height: .7rem;
+	color: #fff;
+	font-size: .4rem;
+	line-height: .7rem;
+	background: #2f92e7;
+	text-align: center;
+	border-radius: .1rem;
+	letter-spacing: .06rem;
+	display: inline-block;
+}
+.yuTree .close {
+	width: 1.4rem;
+	height: .7rem;
+	color: #888;
+	font-size: .4rem;
+	line-height: .7rem;
+	border: .02rem solid #aaa;
+	background: rgba(246,246,246);
+	text-align: center;
+	border-radius: .1rem;
+	letter-spacing: .06rem;
+	display: inline-block;
+	margin-left: 1.12rem;
+}
+
+.yn-tree {
+	overflow: hidden;
+	transition: height .3s
+}
+
+.yn-tree .arrow {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: .5rem;
+	height: .5rem;
+	margin-right: -.12rem;
+	transition: transform .3s
+}
+
+.yn-tree .arrow:after {
+	display: block;
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: .16rem;
+	border-color: transparent
+}
+
+.yn-tree .arrow.arrow-right:after {
+	top: .04rem;
+	left: .14rem;
+	border-left-color: #000
+}
+
+.yn-tree .checkbox>label {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	min-height: .6rem;
+	padding-left: .48rem;
+	font-size: .4rem;
+}
+
+.yn-tree .checkbox>label input[type=checkbox] {
+	position: absolute;
+	width: .36rem;
+	height: .36rem;
+	
+	margin: .08rem .08rem 0 -.4rem
+}
+
+.yn-tree .yn-tree {
+	margin-left: .5rem
+}
+
+.yn-tree li {
+	margin: .06rem 0;
+	overflow: hidden;
+	transition: height .3s
+}
+
+.yn-tree-li>.yn-tree {
+	height: 0
+}
+
+.yn-tree .yn-tree-li.spread>.yn-tree {
+	height: auto
+}
+
+.yn-tree .spread>.checkbox>.arrow-right {
+	transform: rotate(90deg)
+}
+
+.yn-tree .yn-tree-li.shrink>.yn-tree {
+	height: 0
+}
+
+.yn-tree .shrink>.checkbox>.arrow-right {
+	transform: rotate(0deg)
+}

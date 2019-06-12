@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+		<title>出差申请</title>
+
+		<link rel="stylesheet" type="text/css" href="../css/reset.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../css/date.css" />
+
+		<link rel="stylesheet" href="../css/yntree.min.css" />
+		<script src="../js/jq/jquery-1.10.2.min.js"></script>
+		<script src="../js/yntree.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/index.js"></script>
+
+		<script type="text/javascript" src="../js/jq/date.js"></script>
+		<script type="text/javascript" src="../js/jq/iscroll_date.js"></script>
+
+	</head>
+	<body>
+
+
+		<ul class="form det-list">
+			<li>
+				<label>申请人</label><input type="text" disabled="disabled" value="管理员" />
+			</li>
+			<li>
+				<label>申请人所在部门</label><input type="text" disabled="disabled" value="综合管理部" />
+			</li>
+			<li>
+				<label>开始时间</label>
+				<!-- 日期容器 -->
+				<div id="datePlugin"></div>
+				<input id="dateinput" type="text" value="" />
+				<script type="text/javascript">
+					$(function() {
+						//初始化日期插件	
+						$('#dateinput').date();
+					});
+				</script>
+
+			</li>
+			<li>
+				<label>结束时间</label>
+				<div id="datePlugin1"></div>
+				<input id="dateinput1" type="text" value="" />
+				<script type="text/javascript">
+					$(function() {
+						//初始化日期插件	
+						$('#dateinput1').date();
+					});
+				</script>
+
+			</li>
+			<li>
+				<label>出差地点</label><input type="text" value="" />
+			</li>
+			<li>
+				<label>联系电话</label><input type="text" disabled="disabled" value="13301228393" />
+			</li>
+			<li>
+				<label>出差性质</label>
+				<input class="ipt" id="chuchai1" type="radio" name="chuchai" value="一般出差" />
+				<label class="w120" for="chuchai1">一般出差</label>
+				<input class="ipt" id="chuchai2" type="radio" name="chuchai" value="会议" />
+				<label class="w120" for="chuchai2">会&nbsp;&nbsp;&nbsp;&nbsp;议</label>
+				<input class="ipt" id="chuchai3" type="radio" name="chuchai" value="培训" />
+				<label class="w120" for="chuchai3">培&nbsp;&nbsp;&nbsp;&nbsp;训</label>
+
+			</li>
+			<li>
+				<label>出差人员</label>
+				<input id="setValue" type="text" value="" />
+
+			</li>
+			<li>
+				<label>出差事由</label><input type="text" value="" />
+
+			</li>
+			<li>
+				<label>出差行程</label><input type="text" value="" />
+			</li>
+			<li>
+				<label>交通工具</label><input type="text" value="" />
+			</li>
+			<li>
+				<label>部门领导审批意见</label><input type="text" disabled="disabled" value="" />
+			</li>
+			<li>
+				<label>综合管理部意见</label><input type="text" disabled="disabled" value="" />
+			</li>
+			<li>
+				<label>公司领导审批意见</label><input type="text" disabled="disabled" value="" />
+			</li>
+			<li>
+				<label>备注</label><input type="text" value="" />
+			</li>
+
+		</ul>
+		<footer class="ftmwra">
+			<div class="ftmenus">
+				<a class="ftm01" id="agree" href="javascript:;"><i></i>
+					<p>同意</p>
+				</a>
+				<a class="ftm03" id="disagree" href="javascript:;"><i></i>
+					<p>驳回</p>
+				</a>
+			</div>
+		</footer>
+		<div class="fix-menus" id="scrollMenus">
+			<a class="top show" href="javascript:;"></a>
+			<a class="bottom show" href="javascript:;"></a>
+		</div>
+
+		<section class="mask" id="mask">
+			<div class="yuTree">
+				<div id="tree" class="tree"></div>
+				<div id="get_selected_vals" class="yes">
+					确认
+				</div>
+				<div id="close" class="close">
+					取消
+				</div>
+			</div>
+		</section>
+
+
+		<script type="text/javascript">
+			//显示遮罩层
+			function showMask() {
+				$("#mask").css("height", $(document).height());
+				$("#mask").css("width", $(document).width());
+				$("#mask").show();
+				$('body').css('position', 'fixed');
+			}
+
+			//隐藏遮罩层
+			function hideMask() {
+				$("#mask").hide();
+				$('body').css('position', 'unset');
+			}
+			hideMask()
+		</script>
+		<script type="text/javascript">
+			var treeData = {
+				// 复选框change事件
+				onchange: function(input, yntree) {
+					console.log(this);
+				},
+				// 是否严格的遵循父子互相关联的做法
+				checkStrictly: true,
+				data: [{
+						name: "系统管理",
+						inputName: "system",
+						value: "系统管理",
+						children: [{
+								// 树名称
+								name: "用户管理",
+								// 复选框的name属性值
+								inputName: "user",
+								// 复选框的值
+								value: "用户管理",
+								// 复选框的class
+								className: "",
+								// 默认是否选中
+								checked: false,
+								// 是否禁用
+								disabled: false,
+								// 额外数据，如果数据是基本数据类型，则会以data-xx="yyy"的形式附加到复选框中
+								datas: {
+
+								},
+								children: [{
+										name: "添加用户",
+										inputName: "user",
+										value: "添加用户",
+										checked: false,
+										disabled: true
+									},
+									{
+										name: "查看用户",
+										inputName: "user",
+										value: "查看用户"
+									},
+									{
+										name: "编辑用户",
+										inputName: "user",
+										value: "编辑用户",
+										disabled: true,
+										children: [{
+												name: "删除用户",
+												inputName: "user",
+												value: "删除用户"
+											},
+											{
+												name: "修改用户",
+												inputName: "user",
+												value: "修改用户",
+												checked: false
+											}
+										]
+									}
+
+								]
+							},
+							{
+								name: "投诉管理",
+								inputName: "complaint",
+								value: "投诉管理",
+								checked: false,
+								children: [{
+										name: "添加投诉",
+										inputName: "complaint",
+										value: "添加投诉"
+									},
+									{
+										name: "删除投诉",
+										inputName: "complaint",
+										value: "删除投诉"
+									},
+									{
+										name: "编辑投诉",
+										inputName: "complaint",
+										value: "编辑投诉"
+									},
+									{
+										name: "查看投诉",
+										inputName: "complaint",
+										value: "查看投诉"
+									}
+								]
+							}
+						]
+					},
+					{
+						name: "我的公司",
+						inputName: "company",
+						value: "我的公司",
+						children: [{
+								name: "公司管理",
+								inputName: "company manage",
+								value: "公司管理"
+							},
+							{
+								name: "部门管理",
+								inputName: "department manage",
+								value: "部门管理"
+							}
+						]
+					}
+				]
+			};
+
+
+
+			var yntree = new YnTree(document.getElementById("tree"), treeData);
+			//var yntree = new YnTree(document.getElementById("tree"), {data: []});
+			console.log(treeData);
+			//new YnTree(document.getElementById("tree2"), treeData);
+			//yntree.data[0].children[1].children[2].select(true);
+			//yntree.data[0].children[1].select(true);
+			//yntree.data[0].select(true);
+			//yntree.data[0].children[1].children[2].selectUp(true);
+			//console.log(yntree.data[0].children[0].children[1].disable(true));
+
+			yntree.data[0].spread(true);
+			yntree.data[0].children[1].spread(true);
+			yntree.data[0].children[1].children[2].spread(true);
+
+			yntree.disable("查看用户", true);
+			yntree.disable("添加用户", false);
+			// document.getElementById("select_del").onclick = function (){
+			// 	yntree.select("删除用户", true);
+			// }
+			// document.getElementById("cancle_select_del").onclick = function (){
+			// 	yntree.select("删除用户", false);
+			// }
+			document.getElementById("setValue").onfocus = function() {
+				showMask()
+			}
+			document.getElementById("get_selected_vals").onclick = function() {
+				// alert(yntree.getValues());
+				$('#setValue').val(yntree.getValues())
+				hideMask()
+			}
+			document.getElementById("close").onclick = function() {
+				hideMask()
+			}
+			// document.getElementById("create_tree").onclick = function (){
+			// 	new YnTree(document.getElementById("tree2"), treeData);
+			// }
+			// document.getElementById("destroy_tree").onclick = function (){
+			// 	yntree.destroy();
+			// 	console.log(yntree);
+			// }
+			// document.getElementById("reInit_tree").onclick = function (){
+			// 	yntree.reInit(treeData.data);
+			// 	console.log(yntree);
+			// }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,114 @@
+/* 遮罩层 */
+section.mask{
+position: absolute;
+top: 0;
+left: 0;
+background-color: rgba(0,0,0,.5);
+z-index: 100;
+}
+.tankuang {
+	width: 5rem;
+	height: 3.7rem;
+	border-radius: .1rem;
+	background: #fff;
+	margin: 50% 0 0 calc(50% - 2.5rem);
+}
+.tankuang .div1 {
+	width: 100%;
+}
+.tankuang .div1 .div2 {
+	width: 50%;
+	display: inline;
+	
+}
+.tankuang .top {
+	height: 1.07rem;
+	font-size: .3rem;
+	text-align: center;
+	line-height: 1.07rem;
+	letter-spacing: .03rem;
+}
+.tankuang .center {
+	height: 1.54rem;
+	border-top: .01rem solid #ddd;
+	border-bottom: .01rem solid #ddd;
+	font-size: .3rem;
+	text-align: center;
+	line-height: 1.54rem;
+	letter-spacing: .03rem;
+}
+.tankuang .center label {
+	margin-left: .14rem;
+}
+.tankuang .center .cLeft {
+	padding-right: .3rem;
+}
+
+.tankuang .center .cRight {
+	padding-left: .3rem;
+}
+.tankuang .bottom {
+	height: 1.07rem;
+	font-size: .32rem;
+	text-align: center;
+	line-height: 1.07rem;
+	letter-spacing: .03rem;
+}
+.tankuang .bottom .bLeft {
+	text-align: center;
+	padding-right: .7rem;
+	width: calc(100% - .7rem);
+}
+.tankuang .bottom .bRight {
+	border-left: .01rem solid #ddd;
+	text-align: center;
+	padding-left: .9rem;
+	color: #c00811;
+}
+
+.radio_type{
+    width: .26rem;
+    height: .26rem;
+    appearance: none;
+    position: relative;
+	background: #fff;
+}
+.radio_type:before{
+    content: '';
+    width: .26rem;
+    height: .26rem;
+    border: .01rem solid #7d7d7d;
+    display: inline-block;
+    border-radius: 5px;
+    vertical-align: middle;
+    background:#fff;
+	margin: 0 10px 0 0;
+}
+.radio_type:checked:before{
+    content: '';
+    width: .26rem;
+    height: .26rem;
+    border: .01rem solid #c59c5a;
+    background:#c59c5a;
+    display: inline-block;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+.radio_type:checked:after{
+    content: '';
+    width: .15rem;
+    height:.08rem;
+    border: .03rem solid white;
+    border-top: transparent;
+    border-right: transparent;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: .06rem;
+    left:.05rem;
+    vertical-align: middle;
+    transform: rotate(-45deg);
+}
+.radio_type:checked+label{
+    color: #c59c5a;
+}
